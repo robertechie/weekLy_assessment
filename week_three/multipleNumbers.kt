@@ -10,6 +10,6 @@ while(n<=100){
     n++
 }
     //print("Robert you are a good boy".reversed().toString()), the short form
-   println(reverseString("Good food"))
+println(reverseString("Good food"))
 
 }
