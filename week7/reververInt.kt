@@ -1,15 +1,26 @@
 package com.tinyit.week7
 
 fun main(){
-    val arrayNumList: ArrayList<Int> = arrayListOf(21, 20, 19, 18, 17, 16, 15)
-    println(reverse(arrayNumList))
-
+    var numberList = 348597
+    println(reverse(numberList))
 }
 
-fun reverse (arrayNum: ArrayList<Int>): ArrayList<Int> {
-    val result: ArrayList<Int> = arrayListOf()
-    for (i: Int in arrayNum.size - 1 downTo  0) {
-        result.add (arrayNum[i])
+fun reverse (arrayNum:Int):ArrayList<Int>{
+   var reversed:Int = 0
+    var num = arrayNum
+    while ( num !== 0) {
+        var digit: Int = num % 10
+        reversed = reversed * 10 + digit
+        num /= 10
     }
-    return result
-}
+    //get the reversed number, then convert to intArray
+    val temp = reversed.toString()
+    val numbs:ArrayList<Int> = arrayListOf()
+    for (i in 0 .. temp.length-1) {
+        numbs.add(temp[i].digitToInt())
+    }
+    return numbs
+
+    }
+
+
